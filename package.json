@@ -1,0 +1,30 @@
+{
+  "name": "post-to-slack",
+  "version": "1.0.0",
+  "description": "module to post to slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest --run --reporter verbose --coverage --globals"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardforjoesky/post-to-slack.git"
+  },
+  "keywords": [
+    "slack"
+  ],
+  "author": "Richard Forjoe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richardforjoesky/post-to-slack/issues"
+  },
+  "homepage": "https://github.com/richardforjoesky/post-to-slack#readme",
+  "dependencies": {
+    "@slack/web-api": "^6.8.1",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@vitest/coverage-c8": "^0.31.0",
+    "vitest": "^0.31.0"
+  }
+}
