@@ -4,7 +4,8 @@
   "description": "module to post to slack",
   "main": "index.js",
   "scripts": {
-    "test": "vitest --run --reporter verbose --coverage --globals"
+    "test": "vitest --run --reporter verbose --coverage --globals",
+    "report": "node ./slack-message-tool/slack.js send-slack-message"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,8 @@
   },
   "devDependencies": {
     "@vitest/coverage-c8": "^0.31.0",
-    "vitest": "^0.31.0"
+    "vitest": "^0.31.0",
+    "colors": "^1.4.0",
+    "commander": "^10.0.1"
   }
 }
