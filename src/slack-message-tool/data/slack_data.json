@@ -1,0 +1,26 @@
+{
+  "reportUrl": "http://example.com/report",
+  "channel": "#general",
+  "title": "Test Report",
+  "description": "Summary of the test results",
+  "failedTests": [
+    {
+      "feature": "Feature 1",
+      "scenarios": [
+        { "id": "TC001", "name": "Test Case 1" },
+        { "id": "TC002", "name": "Test Case 2" }
+      ]
+    },
+    {
+      "feature": "Feature 2",
+      "scenarios": [
+        { "id": "TC003", "name": "Test Case 3" },
+        { "id": "TC004", "name": "Test Case 4" }
+      ]
+    }
+  ],
+  "date": "2023-05-14",
+  "totalPassed": 10,
+  "totalFailed": 4,
+  "totalNotRun": 0
+}
