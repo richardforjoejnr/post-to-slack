@@ -14,7 +14,6 @@ const sendMessageConfig = (data) => {
 };
 
 exports.sendSlackMessage = async (data) => {
-  console.log("DATA", data)
   try {
     await web.chat.postMessage(sendMessageConfig(data));
   } catch (error) {

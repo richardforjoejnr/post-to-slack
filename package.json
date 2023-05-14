@@ -2,10 +2,14 @@
   "name": "post-to-slack",
   "version": "1.0.0",
   "description": "module to post to slack",
-  "main": "index.js",
+  "main": "src",
+  "private": false,
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "vitest --run --reporter verbose --coverage --globals",
-    "report": "node ./slack-message-tool/slack.js send-slack-message"
+    "report": "node ./src/slack-message-tool/slack.js send-slack-message"
   },
   "repository": {
     "type": "git",
@@ -20,14 +24,19 @@
     "url": "https://github.com/richardforjoesky/post-to-slack/issues"
   },
   "homepage": "https://github.com/richardforjoesky/post-to-slack#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "@slack/web-api": "^6.8.1",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "papaparse": "^5.4.1",
+    "colors": "^1.4.0",
+    "commander": "^10.0.1"
   },
   "devDependencies": {
     "@vitest/coverage-c8": "^0.31.0",
-    "vitest": "^0.31.0",
-    "colors": "^1.4.0",
-    "commander": "^10.0.1"
+    "vitest": "^0.31.0"
   }
 }
