@@ -26,8 +26,8 @@ jobs:
       - name: Bump version and push tag
         run: |
           git config --local user.email "richard.forjoe@sky.uk"
-          git config --local user.name "Richard Forjoe"
-          npm version patch -m "Bump version to %s"
+          git config --local user.name "richardforjoesky"
+          git remote set-url origin https://x-access-token:${{ secrets.TOKEN }}@github.com/richardforjoesky/post-to-slack.git
           git push --follow-tags
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
