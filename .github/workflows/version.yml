@@ -25,7 +25,9 @@ jobs:
 
       - name: Bump version and push tag
         run: |
+          git config --local user.email "richard.forjoe@sky.uk"
+          git config --local user.name "richardforjoesky"
           npm version patch -m "Bump version to %s"
           git push --follow-tags
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
