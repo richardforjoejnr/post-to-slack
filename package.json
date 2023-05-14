@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "test": "vitest --run --reporter verbose --coverage --globals",
+    "build": "babel src --out-dir dist",
     "report": "node ./src/slack-message-tool/slack.js send-slack-message"
   },
   "repository": {
@@ -30,13 +31,15 @@
   },
   "dependencies": {
     "@slack/web-api": "^6.8.1",
-    "dotenv": "^16.0.3",
-    "papaparse": "^5.4.1",
     "colors": "^1.4.0",
-    "commander": "^10.0.1"
+    "commander": "^10.0.1",
+    "dotenv": "^16.0.3",
+    "papaparse": "^5.4.1"
   },
   "devDependencies": {
     "@vitest/coverage-c8": "^0.31.0",
+    "babel-cli": "^6.26.0",
+    "babel": "^6.23.0",
     "vitest": "^0.31.0"
   }
 }
