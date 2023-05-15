@@ -4,8 +4,7 @@ exports.TESTREPORT = (data) => {
   const date = data.date;
   const totalPassed = data.totalPassed; // Replace with your actual data
   const totalFailed = data.totalFailed; // Replace with your actual data
-  const totalNotRun = data.totalNotRun; // Replace with your actual data
-
+  const totalNotRun = data.totalNotRun; // Replace with your actual dat
   console.log('failedTests', data, data.channel, data.failedTests)
 
   const failedTestsText = data.failedTests

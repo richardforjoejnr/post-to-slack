@@ -5,6 +5,7 @@ const token = process.env.SLACK_TOKEN_PERSONAL; // You should replace this with 
 
 const web = new WebClient(token);
 
+
 const sendMessageConfig = (data) => {
   return {
     channel: data.channel,
