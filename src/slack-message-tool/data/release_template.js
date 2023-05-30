@@ -1,23 +1,23 @@
-const { formatReleaseNote } = require('./changelogformatter');
-const { releaseData } = require('./release_data')
 
-exports.RELEASEREPORT = (data = releaseData()) => {
-  console.log('NOTE1', data.releasenotes);
-  
+exports.RELEASEREPORT = (data) => {
+
+  const channel = data.channel;
+  const title = data.title;
+  const subTitle = data.subTitle
+  const description = data.description;
   const releaseUrl = data.releaseUrl;
   const date = data.date;
-  const releasenotes = formatReleaseNote(`${data.releasenotes}`);
-  console.log('NOTE2', releasenotes);
+  const releaseNotes = data.releaseNotes;
 
   return {
-    channel: data.channel || '#general',
-    text: `${data.title}\n${data.description}`,
+    channel: channel || '#general',
+    text: `${title}\n${subTitle}`,
     blocks: [
       {
         type: 'header',
         text: {
           type: 'plain_text',
-          text: 'Release note',
+          text: `${title}\n${subTitle}`,
           emoji: true,
         },
       },
@@ -29,7 +29,7 @@ exports.RELEASEREPORT = (data = releaseData()) => {
         fields: [
           {
             type: 'mrkdwn',
-            text: `*:heavy_check_mark: Completed Release*\n`,
+            text: `*:heavy_check_mark: ${description}*\n`,
           },
           {
             type: 'mrkdwn',
@@ -41,7 +41,7 @@ exports.RELEASEREPORT = (data = releaseData()) => {
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: releasenotes,
+          text: releaseNotes,
         },
       },
       {
