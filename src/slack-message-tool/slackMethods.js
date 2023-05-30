@@ -28,7 +28,7 @@ exports.sendMessage = async (opts) => {
 
 
   await sendSlackMessage(TESTREPORT(data || slackData));
-  await sendSlackMessage(RELEASEREPORT());
+  // await sendSlackMessage(RELEASEREPORT());
 
   console.log('All done...sent to slack');
 };

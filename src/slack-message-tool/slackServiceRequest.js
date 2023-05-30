@@ -1,22 +1,16 @@
-const { WebClient } = require('@slack/web-api');
-require('dotenv').config();
+const { WebClient } = require("@slack/web-api");
+const axios = require("axios");
+require("dotenv").config();
 
-const token = process.env.SLACK_TOKEN_PERSONAL; // You should replace this with your actual token
+exports.sendSlackMessage = async (data, authentication) => {
+  const token = authentication || process.env.SLACK_TOKEN_PERSONAL; 
+const webhookUrl = authentication || process.env.SLACK_WEBHOOK;
 
 const web = new WebClient(token);
-
-
-const sendMessageConfig = (data) => {
-  return {
-    channel: data.channel,
-    text: data.text,
-    blocks: data.blocks,
-  };
-};
-
-exports.sendSlackMessage = async (data) => {
   try {
-    await web.chat.postMessage(sendMessageConfig(data));
+    token
+      ? await web.chat.postMessage(data)
+      : axios.post(webhookUrl, data);
   } catch (error) {
     console.error(error);
   }
