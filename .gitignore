@@ -2,4 +2,3 @@ node_module
 .env
 coverage
 dist
-.npmrc
