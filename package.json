@@ -2,7 +2,7 @@
   "name": "post-to-slack",
   "version": "1.0.0",
   "description": "module to post to slack",
-  "main": "src",
+  "main": "src/index.js",
   "private": false,
   "files": [
     "src"

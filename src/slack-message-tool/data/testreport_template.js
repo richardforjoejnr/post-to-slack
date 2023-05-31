@@ -35,15 +35,15 @@ exports.TESTREPORT = (data) => {
         fields: [
           {
             type: 'mrkdwn',
-            text: `*:heavy_check_mark: Total Passed:*\n${totalPassed}`,
+            text: `*:heavy_check_mark: Total Passed:* ${totalPassed}\n`,
           },
           {
             type: 'mrkdwn',
-            text: `*:x: Total Failed:*\n${totalFailed}`,
+            text: `*:x: Total Failed:* ${totalFailed}\n`,
           },
           {
             type: 'mrkdwn',
-            text: `*:no_entry: Total Not Run:*\n${totalNotRun}`,
+            text: `*:no_entry: Total Not Run:* ${totalNotRun}\n`,
           },
           {
             type: 'mrkdwn',

@@ -18,7 +18,7 @@ const slackData = fs.existsSync('src/slack-message-tool/data/slack_data.json')
 // const isPipeline = process.platform === 'linux';
 
 
-exports.sendMessage = async (opts) => {
+exports.sendMessage = async (opts, type = 'TEST') => {
 
   console.log('REPORT', slackData, opts);
   let data;
@@ -26,9 +26,9 @@ exports.sendMessage = async (opts) => {
   (opts.data) ? data = JSON.parse(opts.data) : data = JSON.parse(slackData);
   console.log('REPORT PARSE', data);
 
-
-  await sendSlackMessage(TESTREPORT(data || slackData));
-  await sendSlackMessage(RELEASEREPORT());
+(type === 'TEST') ? await sendSlackMessage(TESTREPORT(data || slackData)) : ""
+(type === 'RELEASE') ? await sendSlackMessage(RELEASEREPORT(data || slackData)) : ""  
+(type === undefined) ? await sendSlackMessage(data) : ""
 
   console.log('All done...sent to slack');
 };
