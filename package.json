@@ -37,6 +37,9 @@
     "papaparse": "^5.4.1"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^10.0.3",
     "@vitest/coverage-c8": "^0.31.0",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
@@ -45,7 +48,7 @@
   },
   "config": {
     "commitizen": {
-        "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/cz-conventional-changelog"
     }
-}
+  }
 }
