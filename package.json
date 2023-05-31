@@ -1,5 +1,5 @@
 {
-  "name": "post-to-slack",
+  "name": "@richardforjoesky/post-to-slack",
   "version": "1.0.0",
   "description": "module to post to slack",
   "main": "src/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/richardforjoesky/post-to-slack.git"
+    "url": "https://github.com/richardforjoesky/post-to-slack.git"
   },
   "keywords": [
     "slack"
@@ -38,8 +38,14 @@
   },
   "devDependencies": {
     "@vitest/coverage-c8": "^0.31.0",
-    "babel-cli": "^6.26.0",
     "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "cz-conventional-changelog": "^3.3.0",
     "vitest": "^0.31.0"
-  }
+  },
+  "config": {
+    "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+    }
+}
 }
