@@ -27,4 +27,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.TOKEN }}
     - run: npm test
+    - name: Semantic Release
+      run: npx semantic-release
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
