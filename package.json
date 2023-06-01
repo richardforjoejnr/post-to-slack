@@ -1,15 +1,20 @@
 {
   "name": "@richardforjoesky/post-to-slack",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "module to post to slack",
-  "main": "src/index.js",
+  "license": "UNLICENSED",
+  "main": "./dist/src/index.j",
   "private": false,
   "files": [
-    "src"
+    "src",
+    "bin"
   ],
+  "bin": {
+    "send-slack-message": "./dist/bin/slack.js"
+  },
   "scripts": {
     "test": "vitest --run --reporter verbose --coverage --globals",
-    "build": "babel src --out-dir dist",
+    "build": "babel src --out-dir dist/src && babel bin --out-dir dist/bin",
     "report": "node ./src/slack.js send-slack-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'"
   },
   "repository": {
@@ -20,8 +25,7 @@
     "slack"
   ],
   "author": "Richard Forjoe",
-  "license": "ISC",
-  "bugs": {
+ "bugs": {
     "url": "https://github.com/richardforjoesky/post-to-slack/issues"
   },
   "homepage": "https://github.com/richardforjoesky/post-to-slack#readme",

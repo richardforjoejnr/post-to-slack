@@ -1,0 +1,7 @@
+/src
+/bin
+coverage
+test
+.vite.config.js
+.post_to_slack
+.post_to_slack.test.js

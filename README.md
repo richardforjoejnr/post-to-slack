@@ -4,14 +4,16 @@ The 'slack' command-line tool provides a utility to automate the process of post
 #  Getting Started
 Before you begin, you will need to install all the necessary dependencies by running:
 
-Copy the tool files
+npm install -g @richardforjoesky/post-to-slack
+OR
+yarn global add @richardforjoesky/post-to-slack
 
 Ensure that you have Node.js installed on your system as the tool is built using Node.js.
 
 #  Usage
 To use the 'slack' command-line tool, use the following syntax:
 
-node ./src/slack.js send-slack-message 
+npm run|yarn send-slack-message 
 --template '<template-path>' --data '<data-path>'
 Where:
 

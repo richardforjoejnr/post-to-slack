@@ -5,16 +5,14 @@ const dotenv = require("dotenv");
 const { Command } = require("commander");
 require("colors").enable();
 
-const { sendMessage } = require("./slack-message-tool/slackMethods");
+const { sendMessage } = require("../src/slack-message-tool/slackMethods");
 
 // initialise environment
 dotenv.config();
 
-const VERSION = "1.1.0";
-
 const program = new Command();
 program
-  .version(VERSION)
+  .version(getJSON(`${__dirname}/../../package.json`).version)
   .name('slack')
   .usage("<command> [options]")
   .description("The 'slack' command-line tool provides a utility automate posting messages to Slack.");
@@ -40,4 +38,4 @@ program
     }
   });
 
-  program.parse(process.argv);
+  program.parseAsync(process.argv);
