@@ -9,10 +9,11 @@ const { sendMessage } = require("../src/slack-message-tool/slackMethods");
 
 // initialise environment
 dotenv.config();
+const version = '1.4.0'
 
 const program = new Command();
 program
-  .version(getJSON(`${__dirname}/../../package.json`).version)
+  .version(version)
   .name('slack')
   .usage("<command> [options]")
   .description("The 'slack' command-line tool provides a utility automate posting messages to Slack.");
