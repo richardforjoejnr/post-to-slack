@@ -1,4 +1,5 @@
 node_module
 .env
+.npmrc
 coverage
 dist
