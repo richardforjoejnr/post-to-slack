@@ -1,4 +1,4 @@
-exports.TESTREPORT = (data) => {
+exports.TEMPLATE = (data) => {
   
   const reportUrl = data.reportUrl;
   const date = data.date;

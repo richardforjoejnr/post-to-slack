@@ -10,7 +10,7 @@
   "scripts": {
     "test": "vitest --run --reporter verbose --coverage --globals",
     "build": "babel src --out-dir dist",
-    "report": "node ./src/slack-message-tool/slack.js send-slack-message"
+    "report": "node ./src/slack.js send-slack-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'"
   },
   "repository": {
     "type": "git",
