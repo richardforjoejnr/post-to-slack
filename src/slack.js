@@ -10,27 +10,26 @@ const { sendMessage } = require("./slack-message-tool/slackMethods");
 // initialise environment
 dotenv.config();
 
-const VERSION = "1.0.0";
+const VERSION = "1.1.0";
 
 const program = new Command();
 program
   .version(VERSION)
   .name('slack')
   .usage("<command> [options]")
-  .description("Provides tools and utilities for slack");
+  .description("The 'slack' command-line tool provides a utility automate posting messages to Slack.");
 
 program
   .command('send-slack-message')
-  .description("Sending a message to a slack channel")
+  .description("Sends a custom message to a designated Slack channel.\
+  \n\nExample Usage: node ./src/slack.js send-slack-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'")
   .option(
     '-d, --data <data>',
-    "Pass in the relevant data file.\
-    \n\nExample: node ./slack-message-tool/slack.js send-slack-message --data 'src/slack-message-tool/data/slack_data.json'"
+    "Specify the path to the data file. The data file should be in JSON format and will be used to populate the template for the Slack message."
   )
   .option(
     '-t, --template <template>',
-    "Pass in the relevant template file.\
-    \n\nExample: node ./slack-message-tool/slack.js send-slack-message --template './data/release_template'"
+    "Specify the path to the template file. This file defines the slack message structure and content of the Slack message from the json, and it inserts the data from the json."
   )
   .action(async (opts) => {
     try {
