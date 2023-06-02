@@ -5,7 +5,9 @@ The 'slack' command-line tool provides a utility to automate the process of post
 Before you begin, you will need to install all the necessary dependencies by running:
 
 npm install -g @richardforjoesky/post-to-slack@latest
+
 OR
+
 yarn global add @richardforjoesky/post-to-slack@latest
 
 Ensure that you have Node.js installed on your system as the tool is built using Node.js.
@@ -36,13 +38,13 @@ The sendSlackMessage function is part of a utility package designed to automate 
 #  Installation
 Before you begin, make sure you have Node.js and npm installed on your local machine. Then, navigate to your project's root directory and run the following command:
 
-npm install --save @post-to-slack
+npm install --save-dev @richardforjoesky/post-to-slack
 
 #  Usage
 First, you will need to include the function in your file:
 
 
-const { sendSlackMessage } = require('post-to-slack');
+const { sendSlackMessage } = require('@richardforjoesky/post-to-slack');
 To use the function, you need to call it and pass an object containing your message data:
 
 javascript
