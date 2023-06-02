@@ -13,7 +13,7 @@ Ensure that you have Node.js installed on your system as the tool is built using
 #  Usage
 To use the 'slack' command-line tool, use the following syntax:
 
-npm run|yarn send-slack-message 
+npm run|yarn slack-tools post-message 
 --template '<template-path>' --data '<data-path>'
 Where:
 

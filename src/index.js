@@ -26,14 +26,14 @@ const { version } = require('../package.json');
 const program = new Command();
 program
   .version(version)
-  .name('slack')
+  .name('slack-tools')
   .usage("<command> [options]")
   .description("The 'slack' command-line tool provides a utility automate posting messages to Slack.");
 
 program
-  .command('send-slack-message')
+  .command('post-message')
   .description("Sends a custom message to a designated Slack channel.\
-  \n\nExample Usage: node ./src/slack.js send-slack-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'")
+  \n\nExample Usage: slack-tools post-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'")
   .option(
     '-d, --data <data>',
     "Specify the path to the data file. The data file should be in JSON format and will be used to populate the template for the Slack message."
