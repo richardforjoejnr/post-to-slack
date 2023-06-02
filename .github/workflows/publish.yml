@@ -18,7 +18,9 @@ jobs:
           node-version: '18'
 
       - name: Create .npmrc
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.TOKEN }}" > .npmrc
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.TOKEN }}" > .npmrc
+          echo "@richardforjoesky:registry=https://npm.pkg.github.com/" >> .npmrc
 
       - name: Install Dependencies
         run: npm ci
