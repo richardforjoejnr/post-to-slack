@@ -1,0 +1,35 @@
+name: Publish Package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Create .npmrc
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.TOKEN }}" > .npmrc
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v2
+        with:
+          semantic_version: 17
+          branches: |
+            [
+              "main"
+            ]
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}

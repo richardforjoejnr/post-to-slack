@@ -1,21 +1,19 @@
 {
   "name": "@richardforjoesky/post-to-slack",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "module to post to slack",
   "license": "UNLICENSED",
-  "main": "./dist/src/index.j",
+  "main": "./src/index.js",
   "private": false,
   "files": [
-    "src",
-    "bin"
+    "src"
   ],
   "bin": {
-    "send-slack-message": "./dist/bin/slack.js"
+    "send-slack-message": "./src/index.js"
   },
   "scripts": {
     "test": "vitest --run --reporter verbose --coverage --globals",
-    "build": "babel src --out-dir dist/src && babel bin --out-dir dist/bin",
-    "report": "node ./src/slack.js send-slack-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'"
+    "report": "node ./src/index.js send-slack-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'"
   },
   "repository": {
     "type": "git",
@@ -25,7 +23,7 @@
     "slack"
   ],
   "author": "Richard Forjoe",
- "bugs": {
+  "bugs": {
     "url": "https://github.com/richardforjoesky/post-to-slack/issues"
   },
   "homepage": "https://github.com/richardforjoesky/post-to-slack#readme",
@@ -41,12 +39,8 @@
     "papaparse": "^5.4.1"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/npm": "^10.0.3",
+    "semantic-release": "^21.0.2",
     "@vitest/coverage-c8": "^0.31.0",
-    "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
     "cz-conventional-changelog": "^3.3.0",
     "vitest": "^0.31.0"
   },
@@ -54,5 +48,19 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "release": {
+    "branches": ["main"],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/github",
+        {
+          "assets": ["src/**/*.js", "src/**/*.json"]
+        }
+      ]
+    ]
   }
 }
