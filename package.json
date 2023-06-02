@@ -1,6 +1,6 @@
 {
   "name": "@richardforjoesky/post-to-slack",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "module to post to slack",
   "license": "UNLICENSED",
   "main": "./src/index.js",
@@ -9,7 +9,7 @@
     "src"
   ],
   "bin": {
-    "send-slack-message": "./src/index.js"
+    "slack-cli": "./src/index.js"
   },
   "scripts": {
     "test": "vitest --run --reporter verbose --coverage --globals",
