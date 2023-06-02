@@ -4,9 +4,9 @@ The 'slack' command-line tool provides a utility to automate the process of post
 #  Getting Started
 Before you begin, you will need to install all the necessary dependencies by running:
 
-npm install -g @richardforjoesky/post-to-slack
+npm install -g @richardforjoesky/post-to-slack@latest
 OR
-yarn global add @richardforjoesky/post-to-slack
+yarn global add @richardforjoesky/post-to-slack@latest
 
 Ensure that you have Node.js installed on your system as the tool is built using Node.js.
 
@@ -21,7 +21,7 @@ Where:
 <data-path> is the path to the data file. This file should be in JSON format and contains the data that will be used to populate the template for the Slack message.
 #  Example
 
-node ./src/slack.js send-slack-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'
+node ./src/index.js post-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'
 
 In the above example, the 'slack' command-line tool is instructed to send a Slack message. The structure and content of the message are defined in the 'testreport_template' file and it is populated with data from the 'slack_data.json' file.
 
