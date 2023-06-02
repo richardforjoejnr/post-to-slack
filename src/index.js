@@ -31,7 +31,7 @@ program
   .description("The 'slack' command-line tool provides a utility automate posting messages to Slack.");
 
 program
-  .command('send-slack-message')
+  .command('post-message')
   .description("Sends a custom message to a designated Slack channel.\
   \n\nExample Usage: node ./src/slack.js send-slack-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'")
   .option(

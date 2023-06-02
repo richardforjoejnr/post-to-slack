@@ -9,11 +9,11 @@
     "src"
   ],
   "bin": {
-    "slack-cli": "./src/index.js"
+    "slack-tools": "./src/index.js"
   },
   "scripts": {
     "test": "vitest --run --reporter verbose --coverage --globals",
-    "report": "node ./src/index.js send-slack-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'"
+    "report": "node ./src/index.js post-message --template './sample/testreport_template' --data './src/slack-message-tool/sample/slack_data.json'"
   },
   "repository": {
     "type": "git",
